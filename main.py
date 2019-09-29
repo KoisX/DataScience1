@@ -23,27 +23,27 @@ def run_numpy_functions():
     print('B: ', B)
     print('C: ', C)
 
-    print('Ravel:')
+    print('Ravel:')  # matrix in one line
     print('A: ', A.ravel())
     print('B: ', B.ravel())
     print('C: ', C.ravel())
 
-    print('\nShape')
+    print('\nShape')  # how many rows and columns
     print('A: ', A.shape)
     print('B: ', B.shape)
     print('C: ', C.shape)
 
-    print('\nVStack')
+    print('\nVStack')  # Stack arrays in sequence vertically (row wise).
     print('A: ', np.vstack(A))
     print('B: ', np.vstack(B))
     print('C: ', np.vstack(C))
 
-    print('\nHStack')
+    print('\nHStack')  # Stack arrays in sequence horizontally (column wise).
     print('A: ', np.hstack(A))
     print('B: ', np.hstack(B))
     print('C: ', np.hstack(C))
 
-    print('\nReshape')
+    print('\nReshape')  # Change dimensions of matrix
     print('A: ', np.reshape(A, 12))
     print('B: ', np.reshape(B, (2, 4)))
     print('C: ', np.reshape(C, (2, 2)))
@@ -53,22 +53,22 @@ def run_numpy_functions():
     print('B: ', B.ndim)
     print('C: ', C.ndim)
 
-    print('\nShape')
+    print('\nShape')  # Number of rows and columns
     print('A: ', A.shape)
     print('B: ', B.shape)
     print('C: ', C.shape)
 
-    print('\nSize')
+    print('\nSize')  # Number of elements
     print('A: ', A.size)
     print('B: ', B.size)
     print('C: ', C.size)
 
-    print('\nDType')
+    print('\nDType')  # data type of matrix elements
     print('A: ', A.dtype)
     print('B: ', B.dtype)
     print('C: ', C.dtype)
 
-    print('\nSqrt')
+    print('\nSqrt')  # sqrt of each element
     a = np.sqrt(A)
     b_sqrt = np.sqrt(B)
     c_sqrt = np.sqrt(C)
@@ -76,27 +76,27 @@ def run_numpy_functions():
     print('B: ', b_sqrt)
     print('C: ', c_sqrt)
 
-    print('\nFloor')
+    print('\nFloor')  # floor of matrix elementwise
     print('A: ', np.floor(a))
     print('B: ', np.floor(b_sqrt))
     print('C: ', np.floor(c_sqrt))
 
-    print('\nMedian')
+    print('\nMedian')  # median of matrix elements
     print('A: ', np.median(A))
     print('B: ', np.median(B))
     print('C: ', np.median(C))
 
-    print('\nMean')
+    print('\nMean')  # mean of matrix elements
     print('A: ', np.mean(A))
     print('B: ', np.mean(B))
     print('C: ', np.mean(C))
 
-    print('\nVar')  # variance
+    print('\nVar')  # variance of matrix elements
     print('A: ', np.var(A))
     print('B: ', np.var(B))
     print('C: ', np.var(C))
 
-    print('\nStd')  # standard deviation
+    print('\nStd')  # standard deviation of matrix elements
     print('A: ', np.std(A))
     print('B: ', np.std(B))
     print('C: ', np.std(C))
@@ -106,7 +106,7 @@ def run_numpy_functions():
     print('B: ', B.sum(axis=1))
     print('C: ', C.sum(axis=1))
 
-    print('\nMin')
+    print('\nMin')  # min in matrix
     print('A: ', A.min(initial=100))
     print('B: ', B.min(initial=100))
     print('C: ', C.min(initial=100))
@@ -116,22 +116,22 @@ def run_numpy_functions():
     print('B: ', B.max(axis=1, initial=0))
     print('C: ', C.max(axis=1, initial=0))
 
-    print('\nPercentile 25')
+    print('\nPercentile 25')  # percentile as in andan
     print('A: ', np.percentile(A, 25))
     print('B: ', np.percentile(B, 25))
     print('C: ', np.percentile(C, 25))
 
-    print('\nPercentile 50')
+    print('\nPercentile 50')  # percentile as in andan
     print('A: ', np.percentile(A, 50))
     print('B: ', np.percentile(B, 50))
     print('C: ', np.percentile(C, 50))
 
-    print('\nPercentile 75')
+    print('\nPercentile 75')  # percentile as in andan
     print('A: ', np.percentile(A, 75))
     print('B: ', np.percentile(B, 75))
     print('C: ', np.percentile(C, 75))
 
-    print('\nUnique')
+    print('\nUnique')  # list of unique elements
     print('A: ', np.unique(A))
     print('B: ', np.unique(B))
     print('C: ', np.unique(C))
@@ -180,13 +180,13 @@ def run_operations():
     print('\nA / E')
     print(A / E)
 
-    print('\nA // E')
+    print('\nA // E')  # division without remainder
     print(A // E)
 
     print('\nA % E')
     print(A % E)
 
-    print('\nA ** E')
+    print('\nA ** E')  # A^E
     print(A ** E)
 
     print('\nE / A')
@@ -274,6 +274,8 @@ def matrix_file_upload():
 
     r1_read = np.loadtxt('r1.txt', ndmin=2)
     r2_read = np.load('r2.npy')
+
+    print('Matrices are successfully writen to files and loaded from there')
 
 
 if __name__ == '__main__':

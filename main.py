@@ -12,6 +12,7 @@ S = np.array([[25, 16], [68, 25]])
 def main():
     run_numpy_functions()
     run_operations()
+    matrix_file_upload()
 
 
 #  first part of the assignment
@@ -136,6 +137,7 @@ def run_numpy_functions():
     print('C: ', np.unique(C))
 
 
+#  second part of assignment
 def run_operations():
     print('\nIn run_operations function')
 
@@ -258,6 +260,20 @@ def run_operations():
 
     print('\nMatrix rank')
     print(np.linalg.matrix_rank(S))
+
+
+def matrix_file_upload():
+    print('\nIn matrix_file_upload function')
+    size = 100
+
+    r1 = np.random.randint(1, 100, size=(size, 1))
+    r2 = np.random.randint(151, 200, size=(size, 1))
+
+    np.savetxt('r1.txt', r1, newline="\n", fmt="%d")
+    np.save('r2.npy', r2)
+
+    r1_read = np.loadtxt('r1.txt', ndmin=2)
+    r2_read = np.load('r2.npy')
 
 
 if __name__ == '__main__':

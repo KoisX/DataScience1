@@ -1,10 +1,12 @@
 import numpy as np
+from numpy.linalg import LinAlgError
 
 A = np.array([[16, 25, 17, 25], [17, 16, 25, 16], [17, 25, 16, 17]])
 B = np.array([[25, 16], [17, 25], [25, 16], [17, 25]])
 C = np.array([[17, 16, 17, 25]])
 D = np.array([[16, 25, 17]])
 E = 16
+S = np.array([[25, 16], [68, 25]])
 
 
 def main():
@@ -195,6 +197,67 @@ def run_operations():
     print(np.log(B))
 
     print('\nC += E')
+    print(C + E)
+
+    print('\nC *= E')
+    print(C * E)
+
+    print('\nC / E')
+    print(C / E)
+
+    print('\nB ** E')
+    print(B ** E)
+
+    print('\nA //= E')
+    print(A // E)
+
+    print('\nB %= E')
+    print(B % E)
+
+    print('\nC > 27')
+    print(C > 27)
+
+    print('\nC == 25')
+    print(C == 25)
+
+    print('\nA + C')
+    print(A + C)
+
+    print('\nA * C')
+    print(A * C)
+
+    print('\nB^T + C')
+    print(np.transpose(B) + C)
+
+    print('\nnp.dot(A, B)')
+    print(np.dot(A, B))
+
+    try:
+        print('\nnp.dot(B, C^T)')
+        print(np.dot(B, np.transpose(C)))
+    except ValueError as e:
+        print("Operation unsuccessful: " + str(e))
+
+    print('\ndet(S)')
+    print(np.linalg.det(S))
+
+    print('\nround(det(S))')
+    print(round(np.linalg.det(S)))
+
+    print('\ninv(S)')
+    print(np.linalg.inv(S))
+
+    print('\nsolve(B, C^T)')
+    try:
+        print(np.linalg.solve(B, np.transpose(C)))
+    except LinAlgError as e:
+        print('Unsuccessful operation' + str(e))
+
+    print('\nMatrix power (S, 3)')
+    print(np.linalg.matrix_power(S, 3))
+
+    print('\nMatrix rank')
+    print(np.linalg.matrix_rank(S))
 
 
 if __name__ == '__main__':
